@@ -8,7 +8,6 @@ import { store } from './redux/store';
 
 // eslint-disable-next-line
 import './index.css';
-
 // eslint-disable-next-line
 import 'antd/dist/reset.css';
 
