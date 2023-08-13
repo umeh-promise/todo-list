@@ -1,16 +1,9 @@
-/* eslint-disable no-console */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-*,
-::after,
-::before {
-  padding: 0;
+* {
   margin: 0;
-  border: 0;
-  box-sizing: inherit;
 }
 
 :root {
@@ -19,8 +12,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #242424;
+  background-color: #fff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -36,9 +29,10 @@ html {
 }
 
 body {
-  margin: 0;
   display: flex;
-  place-items: center;
+  /* place-items: center; */
+  justify-content: center;
+  padding-top: 5rem;
   min-width: 32rem;
   min-height: 100vh;
 }
@@ -54,4 +48,11 @@ body {
   button {
     background-color: #f9f9f9;
   }
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
