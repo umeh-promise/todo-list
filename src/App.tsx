@@ -46,7 +46,7 @@ function App() {
   }
 
   return (
-    <main className='w-[500px] p-4 border-[2.8px] border-[#eee] rounded-lg border-solid flex gap-8 flex-col'>
+    <main className='w-full lg:w-[500px] p-4 border-[2.8px] border-[#eee] rounded-lg border-solid flex gap-8 flex-col'>
       <form className='py-4 rounded-lg' onSubmit={handleAddItem}>
         <input
           type='text'
