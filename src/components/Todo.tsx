@@ -1,6 +1,12 @@
 import { TodosTypes } from '../App';
 
-export default function Todo({ onToggle, id, completed, todo }: TodosTypes) {
+export default function Todo({
+  onToggle,
+  id,
+  completed,
+  todo,
+  onDeleteItem,
+}: TodosTypes) {
   return (
     <li className='flex items-center gap-1 bg-slate-50 py-2 rounded-md'>
       <input
@@ -13,6 +19,12 @@ export default function Todo({ onToggle, id, completed, todo }: TodosTypes) {
       <label htmlFor={id} className='capitalize text-xl cursor-pointer'>
         {todo}
       </label>
+      <span
+        className='text-4xl text-red-400 cursor-pointer'
+        onClick={() => onDeleteItem?.(id)}
+      >
+        &times;
+      </span>
     </li>
   );
 }

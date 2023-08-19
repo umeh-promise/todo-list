@@ -8,6 +8,7 @@ export interface TodosTypes {
   todo: string;
   completed: boolean;
   onToggle?: Function;
+  onDeleteItem?: Function;
 }
 
 function App() {
@@ -24,6 +25,10 @@ function App() {
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
     );
+  }
+
+  function handleDeleteTodo(id: string) {
+    setTodos(todos.filter((todo: TodosTypes) => todo.id !== id));
   }
 
   function handleAddItem(e: SyntheticEvent) {
@@ -46,7 +51,7 @@ function App() {
   }
 
   return (
-    <main className='w-full lg:w-[500px] p-4 border-[2.8px] border-[#eee] rounded-lg border-solid flex gap-8 flex-col'>
+    <main className='w-full lg:w-[500px] md:p-4 border-[2.8px] border-[#eee] rounded-lg border-solid flex gap-8 flex-col'>
       <form className='py-4 rounded-lg' onSubmit={handleAddItem}>
         <input
           type='text'
@@ -73,7 +78,12 @@ function App() {
 
       <ul className='flex flex-col gap-2'>
         {completedItems.map((item: TodosTypes) => (
-          <Todo key={item.id} {...item} onToggle={handleToggleItem} />
+          <Todo
+            key={item.id}
+            {...item}
+            onToggle={handleToggleItem}
+            onDeleteItem={handleDeleteTodo}
+          />
         ))}
       </ul>
     </main>
